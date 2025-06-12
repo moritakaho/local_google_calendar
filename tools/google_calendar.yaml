@@ -1,0 +1,131 @@
+identity:
+  name: google_calendar
+  author: moritakaho
+  label:
+    en_US: Create Google Calendar Event
+    ja_JP: Googleカレンダーのイベント作成
+    zh_Hans: 创建Google日历事件
+    pt_BR: Criar Evento do Google Agenda
+description:
+  human:
+    en_US: Create Google Calendar Event
+    ja_JP: Googleカレンダーのイベント作成
+    zh_Hans: 创建Google日历事件
+    pt_BR: Criar Evento do Google Agenda
+  llm: Create a new event in Google Calendar
+parameters:
+  - name: summary
+    type: string
+    required: true
+    label:
+      en_US: Event Title
+      ja_JP: イベントタイトル
+      zh_Hans: 事件标题
+      pt_BR: Título do Evento
+    human_description:
+      en_US: The title of the event
+      ja_JP: イベントのタイトル
+      zh_Hans: 事件的标题
+      pt_BR: O título do evento
+    llm_description: The title of the calendar event
+    form: llm
+
+  - name: description
+    type: string
+    required: false
+    label:
+      en_US: Description
+      ja_JP: 説明
+      zh_Hans: 描述
+      pt_BR: Descrição
+    human_description:
+      en_US: Optional description for the event
+      ja_JP: イベントの説明（任意）
+      zh_Hans: 事件的可选描述
+      pt_BR: Descrição opcional para o evento
+    llm_description: Optional details or notes about the event
+    form: llm
+
+  - name: start_time
+    type: string
+    required: true
+    label:
+      en_US: Start Time
+      ja_JP: 開始時刻
+      zh_Hans: 开始时间
+      pt_BR: Hora de Início
+    human_description:
+      en_US: Start date and time of the event
+      ja_JP: イベントの開始日時
+      zh_Hans: 事件的开始日期和时间
+      pt_BR: Data e hora de início do evento
+    llm_description: Start date and time in ISO 8601 format (e.g., 2025-06-01T00:00:00+09:00)
+    form: llm
+
+  - name: end_time
+    type: string
+    required: true
+    label:
+      en_US: End Time
+      ja_JP: 終了時刻
+      zh_Hans: 结束时间
+      pt_BR: Hora de Término
+    human_description:
+      en_US: End date and time of the event
+      ja_JP: イベントの終了日時
+      zh_Hans: 事件的结束日期和时间
+      pt_BR: Data e hora de término do evento
+    llm_description: End date and time in ISO 8601 format (e.g., 2025-06-01T00:00:00+09:00)
+    form: llm
+
+  - name: calendar_id
+    type: string
+    required: true
+    label:
+      en_US: Calendar ID
+      ja_JP: カレンダーID
+      zh_Hans: 日历ID
+      pt_BR: ID do Calendário
+    human_description:
+      en_US: ID of the calendar
+      ja_JP: カレンダーID
+      zh_Hans: 日历的ID
+      pt_BR: ID do calendário
+    llm_description: Calendar ID where the event will be created
+    form: llm
+
+  - name: time_zone
+    type: string
+    required: false
+    default: Asia/Tokyo
+    label:
+      en_US: Time Zone
+      ja_JP: タイムゾーン
+      zh_Hans: 时区
+      pt_BR: Fuso Horário
+    human_description:
+      en_US: Time zone for the event (default:Asia/Tokyo)
+      ja_JP: イベントのタイムゾーン（デフォルト:Asia/Tokyo）
+      zh_Hans: 事件的时区（默认:Asia/Tokyo）
+      pt_BR: Fuso horário do evento (padrão:Asia/Tokyo)
+    llm_description: IANA time zone identifier for the event (e.g., America/New_York, Europe/London, Asia/Tokyo)
+    form: llm
+
+  - name: location
+    type: string
+    required: false
+    label:
+      en_US: Location
+      ja_JP: 場所
+      zh_Hans: 位置
+      pt_BR: Localização
+    human_description:
+      en_US: Optional location of the event
+      ja_JP: イベントの場所（任意）
+      zh_Hans: 事件的可选地点
+      pt_BR: Localização opcional do evento
+    llm_description: Optional physical location or address where the event will take place
+    form: llm
+extra:
+  python:
+    source: tools/google_calendar.py

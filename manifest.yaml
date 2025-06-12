@@ -1,0 +1,53 @@
+version: 0.0.1
+type: plugin
+author: moritakaho
+name: google_calendar
+label:
+  en_US: google_calendar
+  ja_JP: google_calendar
+  zh_Hans: google_calendar
+  pt_BR: google_calendar
+description:
+  en_US: Google Calendar
+  ja_JP: Google Calendar
+  zh_Hans: Google Calendar
+  pt_BR: Google Calendar
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: false
+      llm: false
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    node:
+      enabled: false
+    endpoint:
+      enabled: true
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  tools:
+    - provider/google_calendar.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-06-03T17:23:11.1322867+09:00
+privacy: PRIVACY.md
+verified: false

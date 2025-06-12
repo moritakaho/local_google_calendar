@@ -1,0 +1,38 @@
+identity:
+  author: moritakaho
+  name: google_calendar
+  label:
+    en_US: google_calendar
+    ja_JP: google_calendar
+    zh_Hans: google_calendar
+    pt_BR: google_calendar
+  description:
+    en_US: Google Calendar
+    ja_JP: Google Calendar
+    zh_Hans: Google Calendar
+    pt_BR: Google Calendar
+  icon: icon.svg
+credentials_for_provider:
+  credentials_json:
+    type: secret-input
+    required: true
+    label:
+      en_US: Credentials JSON
+      ja_JP: 認証情報JSON
+      zh_Hans: 凭证JSON
+      pt_BR: JSON de Credenciais
+    placeholder:
+      en_US: Please input your Google service account credentials JSON
+      ja_JP: Googleサービスアカウントの認証情報JSONを入力してください
+      zh_Hans: 请输入您的Google服务账号凭证JSON
+      pt_BR: Por favor, insira o JSON de credenciais da sua conta de serviço Google
+    help:
+      en_US: Create a service account in Google Cloud Console and download the JSON credentials file
+      ja_JP: Google Cloud Consoleでサービスアカウントを作成し、JSON認証情報ファイルをダウンロードしてください
+      zh_Hans: 在Google Cloud控制台中创建服务账号并下载JSON凭证文件
+      pt_BR: Crie uma conta de serviço no Console do Google Cloud e baixe o arquivo de credenciais JSON
+tools:
+  - tools/google_calendar.yaml
+extra:
+  python:
+    source: provider/google_calendar.py
